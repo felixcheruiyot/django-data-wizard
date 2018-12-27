@@ -14,7 +14,7 @@ Loader = import_from_string(LOADER_PATH, 'DATA_WIZARD_LOADER')
 
 class Run(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    template = models.ForeignKey('self', null=True, blank=True)
+    template = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
     record_count = models.IntegerField(null=True, blank=True)
     loader = models.CharField(max_length=255, default=LOADER_PATH)
     serializer = models.CharField(max_length=255, null=True, blank=True)
