@@ -103,7 +103,7 @@ class Range(models.Model):
         ('value', 'Header metadata'),
         ('data', 'Cell value'),
     )
-    run = models.ForeignKey(Run)
+    run = models.ForeignKey(Run, on_delete=models.CASCADE)
     identifier = models.ForeignKey(Identifier, on_delete=models.CASCADE)
     type = models.CharField(max_length=10, choices=RANGE_TYPES)
 
